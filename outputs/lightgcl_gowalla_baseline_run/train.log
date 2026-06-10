@@ -1,0 +1,131 @@
+09:33:16 [INFO] Run dir: /content/TW-PLD-LightGCL/outputs/lightgcl_gowalla_baseline
+09:33:16 [INFO] Config:
+{
+  "data_dir": "/content/TW-PLD-LightGCL/data/gowalla",
+  "output_dir": "/content/TW-PLD-LightGCL/outputs",
+  "embedding_dim": 64,
+  "n_layers": 2,
+  "svd_q": 5,
+  "contrastive_temp": 0.2,
+  "cl_weight": 0.2,
+  "reg_weight": 1e-07,
+  "edge_dropout": 0.0,
+  "lr": 0.001,
+  "train_batch_size": 4096,
+  "eval_batch_size": 256,
+  "epochs": 100,
+  "eval_every_epochs": 3,
+  "early_stop_patience": 10,
+  "eval_k_values": [
+    20,
+    50
+  ],
+  "seed": 42,
+  "device": "cuda",
+  "max_batches_per_epoch": -1
+}
+09:33:20 [INFO] Trainable params: 4,534,144
+09:34:01 [INFO] ep1 done: loss=4.2976 bpr=0.6422 cl=3.6551 | 201 batches | neg=0.6s total=40.3s
+09:34:42 [INFO] ep2 done: loss=3.6353 bpr=0.5058 cl=3.1280 | 201 batches | neg=0.7s total=41.7s
+09:35:24 [INFO] ep3 done: loss=3.1931 bpr=0.4326 cl=2.7581 | 201 batches | neg=0.6s total=41.2s
+09:35:36 [INFO] ep3 val: recall@20=0.0884 ndcg@20=0.0494 recall@50=0.1467 ndcg@50=0.0642
+09:35:36 [INFO]   new best val Recall@20=0.0884, saved checkpoint
+09:36:18 [INFO] ep4 done: loss=2.8965 bpr=0.4002 cl=2.4932 | 201 batches | neg=0.6s total=41.6s
+09:37:00 [INFO] ep5 done: loss=2.5407 bpr=0.3806 cl=2.1565 | 201 batches | neg=1.1s total=41.7s
+09:37:41 [INFO] ep6 done: loss=2.0365 bpr=0.3684 cl=1.6638 | 201 batches | neg=0.6s total=41.5s
+09:37:54 [INFO] ep6 val: recall@20=0.1075 ndcg@20=0.0604 recall@50=0.1763 ndcg@50=0.0780
+09:37:54 [INFO]   new best val Recall@20=0.1075, saved checkpoint
+09:38:35 [INFO] ep7 done: loss=1.4474 bpr=0.3647 cl=1.0775 | 201 batches | neg=0.6s total=41.6s
+09:39:17 [INFO] ep8 done: loss=0.8795 bpr=0.3669 cl=0.5064 | 201 batches | neg=0.6s total=41.2s
+09:39:58 [INFO] ep9 done: loss=0.3294 bpr=0.3734 cl=-0.0514 | 201 batches | neg=0.6s total=41.6s
+09:40:12 [INFO] ep9 val: recall@20=0.1041 ndcg@20=0.0581 recall@50=0.1733 ndcg@50=0.0758
+09:40:54 [INFO] ep10 done: loss=-0.0925 bpr=0.3800 cl=-0.4811 | 201 batches | neg=1.2s total=42.2s
+09:41:35 [INFO] ep11 done: loss=-0.4279 bpr=0.3820 cl=-0.8196 | 201 batches | neg=0.6s total=41.0s
+09:42:16 [INFO] ep12 done: loss=-0.6897 bpr=0.3805 cl=-1.0811 | 201 batches | neg=0.6s total=41.4s
+09:42:29 [INFO] ep12 val: recall@20=0.1017 ndcg@20=0.0560 recall@50=0.1715 ndcg@50=0.0738
+09:43:11 [INFO] ep13 done: loss=-0.8961 bpr=0.3753 cl=-1.2835 | 201 batches | neg=0.6s total=41.5s
+09:43:52 [INFO] ep14 done: loss=-1.0679 bpr=0.3678 cl=-1.4488 | 201 batches | neg=0.6s total=41.1s
+09:44:33 [INFO] ep15 done: loss=-1.2204 bpr=0.3588 cl=-1.5933 | 201 batches | neg=0.6s total=41.3s
+09:44:46 [INFO] ep15 val: recall@20=0.1012 ndcg@20=0.0559 recall@50=0.1700 ndcg@50=0.0735
+09:45:27 [INFO] ep16 done: loss=-1.3643 bpr=0.3475 cl=-1.7270 | 201 batches | neg=0.6s total=41.4s
+09:46:08 [INFO] ep17 done: loss=-1.4982 bpr=0.3355 cl=-1.8498 | 201 batches | neg=0.6s total=40.9s
+09:46:49 [INFO] ep18 done: loss=-1.6148 bpr=0.3230 cl=-1.9549 | 201 batches | neg=0.6s total=41.1s
+09:47:02 [INFO] ep18 val: recall@20=0.1028 ndcg@20=0.0571 recall@50=0.1706 ndcg@50=0.0745
+09:47:43 [INFO] ep19 done: loss=-1.7198 bpr=0.3108 cl=-2.0486 | 201 batches | neg=0.6s total=41.4s
+09:48:24 [INFO] ep20 done: loss=-1.8133 bpr=0.2980 cl=-2.1301 | 201 batches | neg=1.1s total=41.3s
+09:49:05 [INFO] ep21 done: loss=-1.9015 bpr=0.2864 cl=-2.2077 | 201 batches | neg=0.6s total=40.9s
+09:49:18 [INFO] ep21 val: recall@20=0.1058 ndcg@20=0.0587 recall@50=0.1740 ndcg@50=0.0762
+09:49:59 [INFO] ep22 done: loss=-1.9795 bpr=0.2759 cl=-2.2761 | 201 batches | neg=0.6s total=41.4s
+09:50:40 [INFO] ep23 done: loss=-2.0477 bpr=0.2663 cl=-2.3355 | 201 batches | neg=0.6s total=40.7s
+09:51:21 [INFO] ep24 done: loss=-2.1131 bpr=0.2556 cl=-2.3911 | 201 batches | neg=0.6s total=40.9s
+09:51:34 [INFO] ep24 val: recall@20=0.1072 ndcg@20=0.0596 recall@50=0.1769 ndcg@50=0.0775
+09:52:15 [INFO] ep25 done: loss=-2.1687 bpr=0.2469 cl=-2.4388 | 201 batches | neg=0.8s total=41.4s
+09:52:56 [INFO] ep26 done: loss=-2.2188 bpr=0.2374 cl=-2.4802 | 201 batches | neg=0.6s total=40.7s
+09:53:37 [INFO] ep27 done: loss=-2.2662 bpr=0.2287 cl=-2.5197 | 201 batches | neg=0.6s total=41.0s
+09:53:50 [INFO] ep27 val: recall@20=0.1087 ndcg@20=0.0607 recall@50=0.1777 ndcg@50=0.0784
+09:53:50 [INFO]   new best val Recall@20=0.1087, saved checkpoint
+09:54:31 [INFO] ep28 done: loss=-2.3060 bpr=0.2218 cl=-2.5535 | 201 batches | neg=0.6s total=41.2s
+09:55:12 [INFO] ep29 done: loss=-2.3421 bpr=0.2153 cl=-2.5838 | 201 batches | neg=0.6s total=40.7s
+09:55:53 [INFO] ep30 done: loss=-2.3850 bpr=0.2068 cl=-2.6190 | 201 batches | neg=1.0s total=41.2s
+09:56:06 [INFO] ep30 val: recall@20=0.1093 ndcg@20=0.0612 recall@50=0.1794 ndcg@50=0.0793
+09:56:06 [INFO]   new best val Recall@20=0.1093, saved checkpoint
+09:56:47 [INFO] ep31 done: loss=-2.4138 bpr=0.2011 cl=-2.6427 | 201 batches | neg=0.6s total=41.1s
+09:57:27 [INFO] ep32 done: loss=-2.4448 bpr=0.1931 cl=-2.6664 | 201 batches | neg=0.6s total=40.7s
+09:58:08 [INFO] ep33 done: loss=-2.4702 bpr=0.1871 cl=-2.6865 | 201 batches | neg=0.6s total=40.8s
+09:58:21 [INFO] ep33 val: recall@20=0.1104 ndcg@20=0.0620 recall@50=0.1799 ndcg@50=0.0799
+09:58:21 [INFO]   new best val Recall@20=0.1104, saved checkpoint
+09:59:02 [INFO] ep34 done: loss=-2.4909 bpr=0.1841 cl=-2.7048 | 201 batches | neg=0.6s total=41.2s
+09:59:43 [INFO] ep35 done: loss=-2.5184 bpr=0.1765 cl=-2.7255 | 201 batches | neg=0.8s total=41.0s
+10:00:24 [INFO] ep36 done: loss=-2.5335 bpr=0.1728 cl=-2.7375 | 201 batches | neg=0.6s total=40.9s
+10:00:37 [INFO] ep36 val: recall@20=0.1105 ndcg@20=0.0619 recall@50=0.1801 ndcg@50=0.0798
+10:00:37 [INFO]   new best val Recall@20=0.1105, saved checkpoint
+10:01:18 [INFO] ep37 done: loss=-2.5570 bpr=0.1665 cl=-2.7552 | 201 batches | neg=0.6s total=41.3s
+10:01:59 [INFO] ep38 done: loss=-2.5726 bpr=0.1633 cl=-2.7681 | 201 batches | neg=0.6s total=40.5s
+10:02:40 [INFO] ep39 done: loss=-2.5897 bpr=0.1594 cl=-2.7819 | 201 batches | neg=0.6s total=40.9s
+10:02:52 [INFO] ep39 val: recall@20=0.1111 ndcg@20=0.0621 recall@50=0.1803 ndcg@50=0.0800
+10:02:52 [INFO]   new best val Recall@20=0.1111, saved checkpoint
+10:03:34 [INFO] ep40 done: loss=-2.6086 bpr=0.1540 cl=-2.7959 | 201 batches | neg=0.8s total=41.3s
+10:04:14 [INFO] ep41 done: loss=-2.6194 bpr=0.1508 cl=-2.8040 | 201 batches | neg=0.6s total=40.6s
+10:04:55 [INFO] ep42 done: loss=-2.6371 bpr=0.1472 cl=-2.8188 | 201 batches | neg=0.6s total=40.8s
+10:05:08 [INFO] ep42 val: recall@20=0.1096 ndcg@20=0.0612 recall@50=0.1794 ndcg@50=0.0793
+10:05:49 [INFO] ep43 done: loss=-2.6481 bpr=0.1436 cl=-2.8266 | 201 batches | neg=0.6s total=41.0s
+10:06:29 [INFO] ep44 done: loss=-2.6651 bpr=0.1393 cl=-2.8398 | 201 batches | neg=0.6s total=40.5s
+10:07:09 [INFO] ep45 done: loss=nan bpr=nan cl=nan | 201 batches | neg=1.0s total=39.4s
+10:07:21 [INFO] ep45 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:08:00 [INFO] ep46 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.6s
+10:08:38 [INFO] ep47 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.4s
+10:09:16 [INFO] ep48 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.4s
+10:09:29 [INFO] ep48 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:10:07 [INFO] ep49 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.7s
+10:10:46 [INFO] ep50 done: loss=nan bpr=nan cl=nan | 201 batches | neg=1.1s total=39.0s
+10:11:25 [INFO] ep51 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.5s
+10:11:37 [INFO] ep51 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:12:16 [INFO] ep52 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.6s
+10:12:54 [INFO] ep53 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.4s
+10:13:33 [INFO] ep54 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.5s
+10:13:45 [INFO] ep54 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:14:24 [INFO] ep55 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.8s
+10:15:03 [INFO] ep56 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.7s total=38.6s
+10:15:41 [INFO] ep57 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.5s
+10:15:54 [INFO] ep57 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:16:32 [INFO] ep58 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.6s
+10:17:11 [INFO] ep59 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.4s
+10:17:49 [INFO] ep60 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.6s
+10:18:01 [INFO] ep60 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:18:41 [INFO] ep61 done: loss=nan bpr=nan cl=nan | 201 batches | neg=1.1s total=39.1s
+10:19:19 [INFO] ep62 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.4s
+10:19:57 [INFO] ep63 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.5s
+10:20:10 [INFO] ep63 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:20:48 [INFO] ep64 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.6s
+10:21:27 [INFO] ep65 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.5s
+10:22:06 [INFO] ep66 done: loss=nan bpr=nan cl=nan | 201 batches | neg=1.1s total=39.0s
+10:22:18 [INFO] ep66 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:22:57 [INFO] ep67 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.6s
+10:23:35 [INFO] ep68 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.4s
+10:24:14 [INFO] ep69 done: loss=nan bpr=nan cl=nan | 201 batches | neg=0.6s total=38.5s
+10:24:26 [INFO] ep69 val: recall@20=0.0013 ndcg@20=0.0006 recall@50=0.0026 ndcg@50=0.0009
+10:24:26 [INFO] Early stopping: 10 evals without improvement
+10:24:26 [INFO] Training done. Best val Recall@20=0.1111 at epoch 39
+10:24:26 [INFO] Loading best checkpoint for final test eval
+10:24:39 [INFO] FINAL TEST: recall@20=0.1094 ndcg@20=0.0617 recall@50=0.1816 ndcg@50=0.0803
+10:24:39 [INFO] Wrote metrics to /content/TW-PLD-LightGCL/outputs/lightgcl_gowalla_baseline/metrics.csv

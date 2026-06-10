@@ -1,0 +1,16 @@
+{
+  "dataset": "gowalla",
+  "n_users": 29858,
+  "n_items": 40988,
+  "n_interactions": 1027464,
+  "density": 0.0008395550395550749,
+  "n_train": 822546,
+  "n_val": 102459,
+  "n_test": 102459,
+  "k_core": 10,
+  "split": "per-user random 80/10/10",
+  "seed": 42,
+  "time_min_unix": 1236479586,
+  "time_max_unix": 1287799939,
+  "source": "D:\\Desktop 2\\CDU\\PRT840 IT Thesis\\TW-PLD-LightGCL\\data\\gowalla\\Gowalla_cleanCheckins.csv"
+}

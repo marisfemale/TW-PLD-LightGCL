@@ -1,0 +1,24 @@
+{
+  "data_dir": "/content/TW-PLD-LightGCL/data/gowalla",
+  "output_dir": "/content/TW-PLD-LightGCL/outputs",
+  "embedding_dim": 64,
+  "n_layers": 2,
+  "svd_q": 5,
+  "contrastive_temp": 0.2,
+  "cl_weight": 0.2,
+  "reg_weight": 1e-07,
+  "edge_dropout": 0.0,
+  "lr": 0.001,
+  "train_batch_size": 4096,
+  "eval_batch_size": 256,
+  "epochs": 100,
+  "eval_every_epochs": 3,
+  "early_stop_patience": 10,
+  "eval_k_values": [
+    20,
+    50
+  ],
+  "seed": 42,
+  "device": "cuda",
+  "max_batches_per_epoch": -1
+}

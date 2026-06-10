@@ -1,0 +1,35 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Word temp/lock files (created while a docx is open in Word)
+~$*.docx
+~$*.doc
+
+# Local-only run artifacts (specific result files are force-added per run)
+outputs/
+
+# Internal coding-assistant instruction file (kept locally, not pushed)
+CLAUDE.md
+
+# One-off extractions from binary docs (re-generate from the source files if needed)
+docs/_*_extracted.txt
+docs/_equations/
+
+# Raw datasets — re-derive via src/preprocess_gowalla.py from the original
+# SNAP / MIND / Yelp downloads. Too large to track and not the source of truth.
+data/gowalla/raw/
+data/mind/
+data/yelp2018/
+
+# Reference repos — clone separately, e.g.:
+#   git clone https://github.com/HKUDS/LightGCL references/LightGCL_official
+references/LightGCL_official/

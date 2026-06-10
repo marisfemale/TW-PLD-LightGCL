@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="950" viewBox="0 0 900 950" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#2C2C2A">TW-PLD with LightGCL — System Architecture</text>
+
+  <!-- Input: User-item graph -->
+  <rect x="270" y="60" width="360" height="64" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.8"/>
+  <text x="450" y="86" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A">User-item interaction graph</text>
+  <text x="450" y="106" text-anchor="middle" font-size="12" fill="#5F5E5A">with timestamps per edge</text>
+
+  <line x1="450" y1="124" x2="450" y2="160" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 1: LightGCL Encoder -->
+  <rect x="60" y="160" width="780" height="220" rx="14" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+  <text x="80" y="188" font-size="14" font-weight="500" fill="#04342C">Stage 1 — LightGCL encoder</text>
+  <text x="80" y="208" font-size="12" fill="#0F6E56">Representation learning with two views</text>
+
+  <!-- Local view -->
+  <rect x="110" y="232" width="300" height="100" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.8"/>
+  <text x="260" y="266" text-anchor="middle" font-size="14" font-weight="500" fill="#04342C">Local view</text>
+  <text x="260" y="290" text-anchor="middle" font-size="12" fill="#085041">Raw graph propagation</text>
+  <text x="260" y="310" text-anchor="middle" font-size="12" fill="#085041">Equations 1, 4</text>
+
+  <!-- Global view -->
+  <rect x="490" y="232" width="300" height="100" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.8"/>
+  <text x="640" y="266" text-anchor="middle" font-size="14" font-weight="500" fill="#04342C">Global view</text>
+  <text x="640" y="290" text-anchor="middle" font-size="12" fill="#085041">SVD-augmented graph</text>
+  <text x="640" y="310" text-anchor="middle" font-size="12" fill="#085041">Equations 2, 3, 4</text>
+
+  <!-- Arrows from views to outputs -->
+  <line x1="260" y1="380" x2="260" y2="410" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="640" y1="380" x2="640" y2="410" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Embeddings and Contrastive Loss -->
+  <rect x="160" y="410" width="200" height="60" rx="8" fill="#FAC775" stroke="#854F0B" stroke-width="0.8"/>
+  <text x="260" y="436" text-anchor="middle" font-size="14" font-weight="500" fill="#412402">Embeddings e_u, e_i</text>
+  <text x="260" y="455" text-anchor="middle" font-size="12" fill="#633806">From layer combination</text>
+
+  <rect x="540" y="410" width="200" height="60" rx="8" fill="#FAC775" stroke="#854F0B" stroke-width="0.8"/>
+  <text x="640" y="436" text-anchor="middle" font-size="14" font-weight="500" fill="#412402">Contrastive loss L_CL</text>
+  <text x="640" y="455" text-anchor="middle" font-size="12" fill="#633806">Equation 11</text>
+
+  <!-- Arrow to TW-PLD -->
+  <line x1="260" y1="470" x2="260" y2="510" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: TW-PLD denoising -->
+  <rect x="60" y="510" width="780" height="260" rx="14" fill="#EEEDFE" stroke="#3C3489" stroke-width="0.8"/>
+  <text x="80" y="538" font-size="14" font-weight="500" fill="#26215C">Stage 2 — TW-PLD denoising</text>
+  <text x="80" y="558" font-size="12" fill="#534AB7">Temporal-weighted noise filtering</text>
+
+  <!-- Temporal weights -->
+  <rect x="90" y="585" width="230" height="160" rx="8" fill="#CECBF6" stroke="#3C3489" stroke-width="0.8"/>
+  <text x="205" y="615" text-anchor="middle" font-size="14" font-weight="500" fill="#26215C">Temporal weights</text>
+  <text x="205" y="640" text-anchor="middle" font-size="12" font-family="monospace" fill="#3C3489">w_ui = exp(-λ·Δt_ui)</text>
+  <text x="205" y="665" text-anchor="middle" font-size="12" fill="#3C3489">Recent matters more</text>
+  <text x="205" y="695" text-anchor="middle" font-size="12" fill="#534AB7">Per-user t_now</text>
+  <text x="205" y="720" text-anchor="middle" font-size="12" fill="#534AB7">Equation 7</text>
+
+  <!-- Weighted statistics -->
+  <rect x="335" y="585" width="230" height="160" rx="8" fill="#CECBF6" stroke="#3C3489" stroke-width="0.8"/>
+  <text x="450" y="615" text-anchor="middle" font-size="14" font-weight="500" fill="#26215C">Weighted statistics</text>
+  <text x="450" y="640" text-anchor="middle" font-size="12" font-family="monospace" fill="#3C3489">μ_u, σ_u per user</text>
+  <text x="450" y="665" text-anchor="middle" font-size="12" fill="#3C3489">From weighted losses</text>
+  <text x="450" y="695" text-anchor="middle" font-size="12" fill="#534AB7">Equations 8, 9</text>
+
+  <!-- Noise score -->
+  <rect x="580" y="585" width="230" height="160" rx="8" fill="#CECBF6" stroke="#3C3489" stroke-width="0.8"/>
+  <text x="695" y="615" text-anchor="middle" font-size="14" font-weight="500" fill="#26215C">Noise score</text>
+  <text x="695" y="640" text-anchor="middle" font-size="12" fill="#3C3489">Flag if loss exceeds</text>
+  <text x="695" y="660" text-anchor="middle" font-size="12" font-family="monospace" fill="#3C3489">μ_u + k·σ_u</text>
+  <text x="695" y="695" text-anchor="middle" font-size="12" fill="#534AB7">Hard threshold (β)</text>
+  <text x="695" y="720" text-anchor="middle" font-size="12" fill="#534AB7">Equation 10</text>
+
+  <!-- Internal arrows in TW-PLD -->
+  <line x1="320" y1="665" x2="333" y2="665" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="565" y1="665" x2="578" y2="665" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrows to joint loss -->
+  <line x1="260" y1="770" x2="260" y2="800" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="640" y1="470" x2="640" y2="800" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Joint loss -->
+  <rect x="180" y="800" width="540" height="64" rx="8" fill="#F5C4B3" stroke="#712B13" stroke-width="0.8"/>
+  <text x="450" y="826" text-anchor="middle" font-size="14" font-weight="500" fill="#4A1B0C">Joint loss</text>
+  <text x="450" y="848" text-anchor="middle" font-size="12" font-family="monospace" fill="#712B13">L = Σ n_ui·loss_ui + α·L_CL + γ·||Θ||² (Equation 12)</text>
+
+  <!-- Backprop arrow loop -->
+  <path d="M 180 832 L 30 832 L 30 282 L 60 282" fill="none" stroke="#888780" stroke-width="0.8" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <text x="20" y="557" text-anchor="middle" font-size="11" fill="#5F5E5A" transform="rotate(-90 20 557)">Backprop · update embeddings</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 890)">
+    <rect x="0" y="0" width="14" height="14" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.8"/>
+    <text x="20" y="12" font-size="11" fill="#5F5E5A">Input data</text>
+
+    <rect x="100" y="0" width="14" height="14" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.8"/>
+    <text x="120" y="12" font-size="11" fill="#5F5E5A">LightGCL encoder</text>
+
+    <rect x="240" y="0" width="14" height="14" fill="#CECBF6" stroke="#3C3489" stroke-width="0.8"/>
+    <text x="260" y="12" font-size="11" fill="#5F5E5A">TW-PLD denoising</text>
+
+    <rect x="380" y="0" width="14" height="14" fill="#FAC775" stroke="#854F0B" stroke-width="0.8"/>
+    <text x="400" y="12" font-size="11" fill="#5F5E5A">Intermediate outputs</text>
+
+    <rect x="540" y="0" width="14" height="14" fill="#F5C4B3" stroke="#712B13" stroke-width="0.8"/>
+    <text x="560" y="12" font-size="11" fill="#5F5E5A">Joint loss / training signal</text>
+
+    <line x1="730" y1="7" x2="760" y2="7" stroke="#888780" stroke-width="0.8" stroke-dasharray="6 4"/>
+    <text x="765" y="12" font-size="11" fill="#5F5E5A">Backprop</text>
+  </g>
+</svg>
