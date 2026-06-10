@@ -4,7 +4,7 @@ A robust recommender system that combines graph contrastive learning, personaliz
 
 ## Project Context
 
-This is the implementation codebase for a Master's capstone project (PRT840) at Charles Darwin University. The full design rationale, conceptual background, and scope are documented in `CONTEXT.md` — read that first.
+This is the implementation codebase for a Master's capstone project (PRT840) at Charles Darwin University, Group 03, 2026. The full design rationale, conceptual background, and scope are documented in `CONTEXT.md` — read that first.
 
 ## What This Model Does
 
